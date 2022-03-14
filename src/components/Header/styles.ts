@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 export const Container = styled.header`
   height: 5rem;
-  border-bottom: 1px solid var(--gray-800);
+  border-bottom: 1px solid var(--gray-850);
 
-  @media (max-width: 768px) {
-    height: 8rem;
+  @media (max-width: 600px) {
+    height: 8.5rem;
   }
 `;
 
