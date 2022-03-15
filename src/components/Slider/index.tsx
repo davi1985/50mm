@@ -37,12 +37,14 @@ export const Slideshow = () => {
               <div>
                 <Image
                   src={image.url}
-                  layout="responsive"
-                  width={"1000px"}
-                  height={"600px"}
+                  layout="fill"
+                  // width={1000}
+                  // height={600}
                   alt={image.caption}
                   priority
-                  onLoad={imageLoaded}
+                  objectFit="cover"
+                  quality={30}
+                  // onLoad={imageLoaded}
                 />
               </div>
               <Caption>

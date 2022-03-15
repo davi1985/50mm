@@ -10,7 +10,13 @@ export const Header = () => {
         <Link href="/">
           <Title>
             My World in 50mm
-            <Image src="/camera.svg" alt="" width="50" height="50" />
+            <Image
+              layout="fixed"
+              src="/camera.svg"
+              alt="My World in 50mm"
+              width={40}
+              height={40}
+            />
           </Title>
         </Link>
 
