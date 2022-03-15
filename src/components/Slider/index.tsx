@@ -1,23 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Fade } from "react-slideshow-image";
-import { slideImages } from "../../data/slide-images";
 
 import "react-slideshow-image/dist/styles.css";
-import { Caption, Container, Details } from "./styles";
 
-const imageProps = {
-  width: "1200px",
-  height: "600px",
-};
+import { Caption, Container, Details } from "./styles";
+import { slideImages } from "../../data/slide-images";
 
 import Image from "next/image";
 
+type ImageToSlide = {
+  url: string;
+  caption: string;
+};
+
 export const Slideshow = () => {
+  const [images, setImages] = useState<ImageToSlide[]>([]);
+
+  useEffect(() => {
+    setImages(slideImages);
+  }, []);
+
   return (
     <Container>
       <div className="slide-container">
         <Fade>
-          {slideImages.map((item, index) => (
+          {images.map((item, index) => (
             <div className="each-fade" key={index}>
               <div>
                 <Image
@@ -26,6 +33,7 @@ export const Slideshow = () => {
                   width={"1000px"}
                   height={"600px"}
                   alt={item.caption}
+                  priority
                 />
               </div>
               <Caption>
