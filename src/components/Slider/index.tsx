@@ -24,13 +24,13 @@ export const Slideshow = () => {
     <Container>
       <div className="slide-container">
         <Fade>
-          {loading && (
+          {/* {loading && (
             <div className="each-fade">
               <div>
                 <Loading>Loading images...</Loading>
               </div>
             </div>
-          )}
+          )} */}
 
           {slideImages.map((image, index) => (
             <div className="each-fade" key={index}>
@@ -38,13 +38,10 @@ export const Slideshow = () => {
                 <Image
                   src={image.url}
                   layout="fill"
-                  // width={1000}
-                  // height={600}
                   alt={image.caption}
                   priority
                   objectFit="cover"
                   quality={30}
-                  // onLoad={imageLoaded}
                 />
               </div>
               <Caption>
