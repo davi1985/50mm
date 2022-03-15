@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.footer`
   max-width: 1120px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 1rem 2rem;
   color: var(--gray-500);
   display: flex;
   justify-content: space-around;
@@ -13,12 +13,21 @@ export const Container = styled.footer`
 
   .audio {
     height: 30px;
-    /* margin-top: 0.5rem; */
   }
+
+  /* audio {
+    background: red;
+  } */
 `;
 
 export const ListContainer = styled.ol`
   list-style: none;
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
+
+  li {
+    a {
+    }
+  }
 `;
+
 export const AudioContainer = styled.span``;

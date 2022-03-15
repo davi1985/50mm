@@ -41,7 +41,7 @@ export const Slideshow = () => {
         <p>
           Hello, welcome here, I am Davi Silva and I am a 50mm photographer.
           Most of what I have been shooting in the last 2 years has been done
-          with a 50mm in my full frame 5D Mark II body. In this web site you can
+          with a 50mm in my full frame 5D Mark II body. In this website you can
           see same pictures and I hope enjoy it.
         </p>
       </Details>
