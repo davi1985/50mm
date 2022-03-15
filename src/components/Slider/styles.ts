@@ -26,3 +26,12 @@ export const Details = styled.div`
     margin-bottom: 1.2rem;
   }
 `;
+
+export const Loading = styled.div`
+  width: 1000px;
+  height: 600px;
+
+  display: flex;
+  justify-content: center;
+  align-self: center;
+`;

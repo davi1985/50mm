@@ -1,13 +1,12 @@
+import { useEffect, useLayoutEffect, useState } from "react";
+import Link from "next/link";
 import ReactAudioPlayer from "react-audio-player";
+
+import { AiFillInstagram } from "react-icons/ai";
 
 import { Container, ListContainer } from "./styles";
 
-import { AiFillInstagram } from "react-icons/ai";
-import Link from "next/link";
-import { useEffect } from "react";
-
 export const Footer = () => {
-  useEffect(() => {}, []);
   return (
     <Container>
       <p>Copyright © All rights reserved</p>

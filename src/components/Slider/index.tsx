@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Fade } from "react-slideshow-image";
 
 import "react-slideshow-image/dist/styles.css";
 
-import { Caption, Container, Details } from "./styles";
+import { Caption, Container, Details, Loading } from "./styles";
 import { slideImages } from "../../data/slide-images";
 
 import Image from "next/image";
@@ -15,29 +15,48 @@ type ImageToSlide = {
 
 export const Slideshow = () => {
   const [images, setImages] = useState<ImageToSlide[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    setImages(slideImages);
+    setTimeout(() => setImages(slideImages), 1000);
   }, []);
 
+  const counter = useRef(0);
+
+  const imageLoaded = () => {
+    counter.current += 1;
+
+    if (counter.current >= slideImages.length) {
+      setLoading(false);
+    }
+  };
   return (
     <Container>
       <div className="slide-container">
         <Fade>
-          {images.map((item, index) => (
+          {loading && (
+            <div className="each-fade">
+              <div>
+                <Loading>Loading images...</Loading>
+              </div>
+            </div>
+          )}
+
+          {images.map((image, index) => (
             <div className="each-fade" key={index}>
               <div>
                 <Image
+                  src={image.url}
                   layout="responsive"
-                  src={item.url}
                   width={"1000px"}
                   height={"600px"}
-                  alt={item.caption}
+                  alt={image.caption}
                   priority
+                  onLoad={imageLoaded}
                 />
               </div>
               <Caption>
-                {item.caption} - <span>Photo by Davi Silva</span>
+                {image.caption} - <span>Photo by Davi Silva</span>
               </Caption>
             </div>
           ))}
