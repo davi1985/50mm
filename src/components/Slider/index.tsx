@@ -8,18 +8,8 @@ import { slideImages } from "../../data/slide-images";
 
 import Image from "next/image";
 
-type ImageToSlide = {
-  url: string;
-  caption: string;
-};
-
 export const Slideshow = () => {
-  const [images, setImages] = useState<ImageToSlide[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-
-  useEffect(() => {
-    setTimeout(() => setImages(slideImages), 1000);
-  }, []);
 
   const counter = useRef(0);
 
@@ -42,7 +32,7 @@ export const Slideshow = () => {
             </div>
           )}
 
-          {images.map((image, index) => (
+          {slideImages.map((image, index) => (
             <div className="each-fade" key={index}>
               <div>
                 <Image
