@@ -12,6 +12,7 @@ export const GlobalStyle = createGlobalStyle`
 
     --gray-100: #e1e1e6;
     --gray-300: #a8a8b3;
+    --gray-500: #424248;
     --gray-700: #323238;
     --gray-800: #29292e;
     --gray-850: #1f2729;
@@ -44,6 +45,10 @@ export const GlobalStyle = createGlobalStyle`
   select,
   button {
     font: 400 1rem 'Montserrat', sans-serif;
+  }
+
+  body {
+    height: 100vh;
   }
 
   button {
