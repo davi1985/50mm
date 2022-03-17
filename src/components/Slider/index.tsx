@@ -1,12 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Fade } from "react-slideshow-image";
-
-import "react-slideshow-image/dist/styles.css";
-
-import { Caption, Container, Details, Loading } from "./styles";
-import { slideImages } from "../../data/slide-images";
-
 import Image from "next/image";
+import { useRef, useState } from "react";
+import { Fade } from "react-slideshow-image";
+import "react-slideshow-image/dist/styles.css";
+import { slideImages } from "../../data/slide-images";
+import { Caption, Container, Details, Loading } from "./styles";
 
 export const Slideshow = () => {
   const [loading, setLoading] = useState<boolean>(true);
@@ -37,11 +34,11 @@ export const Slideshow = () => {
               <div>
                 <Image
                   src={image.url}
-                  layout="fill"
+                  layout="responsive"
                   alt={image.caption}
                   priority
                   objectFit="cover"
-                  quality={30}
+                  quality={70}
                   onLoad={imageLoaded}
                 />
               </div>
