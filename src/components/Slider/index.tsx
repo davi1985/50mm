@@ -1,47 +1,28 @@
 import Image from "next/image";
-import { useRef, useState } from "react";
 import { Fade } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import { slideImages } from "../../data/slide-images";
-import { Caption, Container, Details, Loading } from "./styles";
+import { Caption, Container, Details, Gallery } from "./styles";
 
 export const Slideshow = () => {
-  const [loading, setLoading] = useState<boolean>(true);
-
-  const counter = useRef(0);
-
-  const imageLoaded = () => {
-    counter.current += 1;
-
-    if (counter.current >= slideImages.length) {
-      setLoading(false);
-    }
-  };
   return (
     <Container>
       <div className="slide-container">
         <Fade>
-          {loading && (
-            <div className="each-fade">
-              <div>
-                <Loading>Loading images...</Loading>
-              </div>
-            </div>
-          )}
-
           {slideImages.map((image, index) => (
             <div className="each-fade" key={index}>
-              <div>
+              <Gallery>
                 <Image
                   src={image.url}
-                  layout="responsive"
+                  width={1000}
+                  height={600}
                   alt={image.caption}
-                  priority
                   objectFit="cover"
-                  quality={70}
-                  onLoad={imageLoaded}
+                  quality={75}
+                  loading="lazy"
                 />
-              </div>
+              </Gallery>
+
               <Caption>
                 {image.caption} - <span>Photo by Davi Silva</span>
               </Caption>
