@@ -6,7 +6,33 @@ export const Container = styled.div`
   padding: 2rem;
 
   .each-fade {
-    height: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      background: #f6f7f8;
+      background-image: linear-gradient(
+        to right,
+        #f6f7f8 0%,
+        #edeef1 20%,
+        #f6f7f8 40%,
+        #f6f7f6f8 100%
+      );
+      background-size: 80rem 14rem;
+      animation: placeholderShimmer 0.1s linear infinite forwards;
+
+      @keyframes placeholderShimmer {
+        0% {
+          background-position: -40rem 0;
+        }
+        100% {
+          background-position: 40rem 0;
+        }
+      }
+    }
   }
 `;
 
@@ -31,26 +57,4 @@ export const Details = styled.div`
   }
 `;
 
-export const Gallery = styled.div`
-  img {
-    background: #f6f7f8;
-    background-image: linear-gradient(
-      to right,
-      #f6f7f8 0%,
-      #edeef1 20%,
-      #f6f7f8 40%,
-      #f6f7f6f8 100%
-    );
-    background-size: 80rem 14rem;
-    animation: placeholderShimmer 1s linear infinite forwards;
-
-    @keyframes placeholderShimmer {
-      0% {
-        background-position: -40rem 0;
-      }
-      100% {
-        background-position: 40rem 0;
-      }
-    }
-  }
-`;
+export const Gallery = styled.div``;

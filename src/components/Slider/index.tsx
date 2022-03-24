@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Fade } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import { slideImages } from "../../data/slide-images";
-import { Caption, Container, Details, Gallery } from "./styles";
+import { Caption, Container, Details } from "./styles";
 
 export const Slideshow = () => {
   return (
@@ -11,17 +11,15 @@ export const Slideshow = () => {
         <Fade>
           {slideImages.map((image, index) => (
             <div className="each-fade" key={index}>
-              <Gallery>
-                <Image
-                  src={image.url}
-                  width={1000}
-                  height={600}
-                  alt={image.caption}
-                  objectFit="cover"
-                  quality={75}
-                  loading="lazy"
-                />
-              </Gallery>
+              <Image
+                src={image.url}
+                width={1200}
+                height={700}
+                alt={image.caption}
+                objectFit="cover"
+                quality={75}
+                loading="lazy"
+              />
 
               <Caption>
                 {image.caption} - <span>Photo by Davi Silva</span>
